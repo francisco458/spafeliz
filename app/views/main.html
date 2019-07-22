@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1>!El cuidado y tu bienestar¡</h1>
+  <p class="lead">
+    Cuidamos de tu salud y belleza con los mejores especialistas
+  </p>
+</div>
+
+<div id="services" class="container">
+  <h2>Nuestros Servicios </h2>
+  
+  <div ng-style="{ 'background': 'url({{item.image}})' }" class="service-item" ng-repeat="item in vm.serviceList">
+    <div class="content-service">
+      <h4>{{ item.name }}</h4>
+      <p>{{ item.description }}</p>
+      <p>COP {{ item.cost }}</p>
+    </div>
+  </div>
+
+  <p>* Reserva cualquiera de nuestros servicios con facilidad</p>
+</div>
+
