@@ -18,9 +18,8 @@ body {
 }
 
 /* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+.header{
+  
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -45,10 +44,16 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background: url('https://pur.vamtam.com/wp-content/uploads/2017/11/parallax4.jpg');
+  min-height: 400px;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.jumbotron h1{
+  margin-top: 70px;
+  color: #673AB7 !important;
+}
+
+.jumbotron p{
+  color: #222;
 }
 
 /* Supporting marketing content */
@@ -80,4 +85,33 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.navbar-default{
+  background: #fff;
+}
+
+#services{
+  margin-bottom: 20px;
+}
+
+#services h2 {
+  font-weight: 200;
+}
+
+#services .service-item{
+  padding: 0px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  background-size: cover !important;
+}
+#services .service-item .content-service{
+  padding: 15px;
+  color: #828178;
+}
+
+#services .service-item .content-service h4{
+  font-size: 28px;
+  color: #828178;
+  font-weight: 600;
 }
