@@ -9,22 +9,37 @@
  */
 angular.module('spafelizApp').controller('MainCtrl', mainCtrl);
 
-mainCtrl.$inject = ['spaServices'];
+mainCtrl.$inject = ['spaServices', 'spaServicesHttp'];
 
-function mainCtrl(spaServices) {
+function mainCtrl(spaServices, spaServicesHttp) {
 
   var vm = this;
   vm.$onInit = init;
   vm.miNombre = 'Francisco';
   vm.loadSpaServices = loadSpaServices;
+  vm.loadSpaServicesHttp = loadSpaServicesHttp;
 
-  function init(){
-    vm.loadSpaServices();
+  function init() {
+    //vm.loadSpaServices();
+    vm.loadSpaServicesHttp();
   }
 
-  function loadSpaServices(){
+  function loadSpaServices() {
     vm.serviceList = spaServices.getAllServices();
     console.log(vm.serviceList);
+  }
+
+  function loadSpaServicesHttp() {
+    console.log('inicio');
+    spaServicesHttp.getAll()
+      .then(function (result) {
+        console.log('resultado ' + result.data)
+        vm.serviceList = result.data;
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    console.log('termino');
   }
 
 };
