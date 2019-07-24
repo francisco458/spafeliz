@@ -25,9 +25,17 @@ function settings($stateProvider, $urlRouterProvider){
         templateUrl:'views/about.html'
     }
 
+    var detailState = {
+        name:'home.detail',
+        url:'/detail/{id}',
+        templateUrl:'views/detail.html',
+        controller: 'DetailCtrl as vm'
+    }
+
     $stateProvider.state(mainState);
     $stateProvider.state(aboutState);
     $stateProvider.state(homeState);
+    $stateProvider.state(detailState);
 
     $urlRouterProvider.when('','/');
 }

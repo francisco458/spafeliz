@@ -10,9 +10,9 @@
    */
   angular.module('spafelizApp').service('spaServicesHttp', spaServicesHttp);
 
-  spaServicesHttp.$inject = ['$http', '$q'];
+  spaServicesHttp.$inject = ['$http', '$q', 'httpConfig'];
 
-  function spaServicesHttp($http, $q) {
+  function spaServicesHttp($http, $q, httpConfig) {
 
     let services = {
       getAll: getAll,
@@ -23,7 +23,8 @@
     function getAll() {
       var defered = $q.defer();
       var promise = defered.promise;
-      const url = 'http://localhost:3000/services';
+      // const url = 'http://localhost:3000/services';
+      const url = httpConfig.url + httpConfig.services.all;
       $http.get(url)
         .then(function (data) {
           console.log(data);
@@ -37,7 +38,19 @@
     }
 
     function getByPk(id) {
-
+      var defered = $q.defer();
+      var promise = defered.promise;
+      const url = httpConfig.url + httpConfig.services.all + '/' + id;
+      $http.get(url)
+        .then(function (data) {
+          console.log(data);
+          defered.resolve(data)
+        })
+        .catch(function (error) {
+          console.log(error);
+          defered.reject(error);
+        });
+      return promise;
     }
 
   }
