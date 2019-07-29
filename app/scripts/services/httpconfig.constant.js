@@ -13,6 +13,9 @@ angular.module('spafelizApp').constant('httpConfig', {
 
   services: {
     all: 'services'
+  },
+  reservas: {
+    all: 'reservas'
   }
 
 });

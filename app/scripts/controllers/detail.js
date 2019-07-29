@@ -18,10 +18,12 @@ function detailCtrl($state, spaServicesHttp) {
 
   function init() {
     vm.loadSpaServicesHttp();
+    
   }
-
+  
   function loadSpaServicesHttp() {
     console.log('inicio');
+    localStorage.setItem('idServicio', $state.params.id);
     spaServicesHttp.getByPk($state.params.id)
       .then(function (result) {
         console.log('resultado ' + result.data)
