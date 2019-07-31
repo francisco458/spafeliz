@@ -105,6 +105,11 @@ body {
   margin-bottom: 15px;
   background-size: cover !important;
 }
+
+#services .service-item a{
+  text-decoration: none
+}
+
 #services .service-item .content-service{
   padding: 15px;
   color: #828178;

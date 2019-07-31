@@ -25,9 +25,25 @@ function settings($stateProvider, $urlRouterProvider){
         templateUrl:'views/about.html'
     }
 
+    var detailState = {
+        name:'home.detail',
+        url:'/detail/{id}',
+        templateUrl:'views/detail.html',
+        controller: 'DetailCtrl as vm'
+    }
+    
+    var bookState = {
+        name:'home.book',
+        url:'/book',
+        templateUrl:'views/book.html',
+        controller: 'BookCtrl as vm'
+    }
+
     $stateProvider.state(mainState);
     $stateProvider.state(aboutState);
     $stateProvider.state(homeState);
+    $stateProvider.state(detailState);
+    $stateProvider.state(bookState);
 
     $urlRouterProvider.when('','/');
 }

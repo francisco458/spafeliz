@@ -9,11 +9,13 @@
   <h2>Nuestros Servicios </h2>
   
   <div ng-style="{ 'background': 'url({{item.image}})' }" class="service-item" ng-repeat="item in vm.serviceList">
-    <div class="content-service">
-      <h4>{{ item.name }}</h4>
-      <p>{{ item.description }}</p>
-      <p>COP {{ item.cost }}</p>
-    </div>
+    <a ui-sref="home.detail({ id:item.id })">
+      <div class="content-service">
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+        <p>{{ item.cost | currencyFormat}}</p>
+      </div>
+    </a>
   </div>
 
   <p>* Reserva cualquiera de nuestros servicios con facilidad</p>
